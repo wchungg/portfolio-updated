@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { heroText, roles, words } from "../constants";
+import Button from "../components/Button";
+import HeroExperience from "../components/HeroModels/HeroExperience";
 
 const Hero = () => {
   const [index, setIndex] = useState(0);
@@ -19,6 +21,7 @@ const Hero = () => {
       </div>
 
       <div className="hero-layout">
+        {/* LEFT: HERO TEXT */}
         <header className="flex flex-col justify-center md:w-full w-screen md:px-20 px-5">
           <div className="flex flex-col gap-7">
             <div className="hero-text flex flex-col gap-2">
@@ -56,11 +59,22 @@ const Hero = () => {
                 className="typewriter text-purple-500"
                 style={{ "--chars": roles[index].length }}
               >
-                {" "}{roles[index]}
+                {" "}
+                {roles[index]}
               </span>
             </p>
+            <Button
+              className="md:w-80 md:h-16 w-60 h-12"
+              id="button"
+              text="View my Work"
+            />
           </div>
         </header>
+
+        {/* LEFT: HERO TEXT */}
+        <div className="hero-3d-layout">
+          <HeroExperience />
+        </div>
       </div>
     </section>
   );
