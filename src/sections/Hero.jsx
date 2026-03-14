@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { heroText, roles, words } from "../constants";
+import { heroText, roles, greetings } from "../constants";
 import Button from "../components/Button";
 import HeroExperience from "../components/HeroModels/HeroExperience";
+import { useGSAP } from '@gsap/react'
+import gsap from 'gsap'
+import AnimatedCounter from "../components/AnimatedCounter";
 
 const Hero = () => {
   const [index, setIndex] = useState(0);
@@ -13,6 +16,22 @@ const Hero = () => {
 
     return () => clearInterval(interval);
   }, []);
+
+  useGSAP(() => {
+    gsap.fromTo('.hero-text',
+        {
+            y: 50,
+            opacity: 0
+        },
+        {
+            y: 0,
+            opacity: 1,
+            stagger: 0.2,
+            duration: 1,
+            ease: 'power2.inOut'
+        }
+    )
+  })
 
   return (
     <section id="hero" className="relative overflow-hidden">
@@ -27,17 +46,17 @@ const Hero = () => {
             <div className="hero-text flex flex-col gap-2">
               <span className="slide">
                 <span className="wrapper">
-                  {words.map((word) => (
+                  {greetings.map((greet) => (
                     <span
-                      key={word.text}
+                      key={greet.text}
                       className="flex items-center md:gap-3 gap-1 pb-2"
                     >
                       <img
-                        src={word.imgPath}
-                        alt={word.text}
+                        src={greet.imgPath}
+                        alt={greet.text}
                         className="xl:size-12 md:size-10 size-7 md:p-2 p-1 rounded-full bg-white-50"
                       />
-                      <span>{word.text},</span>
+                      <span>{greet.text},</span>
                     </span>
                   ))}
                 </span>
@@ -72,10 +91,15 @@ const Hero = () => {
         </header>
 
         {/* LEFT: HERO TEXT */}
-        <div className="hero-3d-layout">
-          <HeroExperience />
-        </div>
+        <figure>
+            <div className="hero-3d-layout">
+            <HeroExperience />
+            </div>
+        </figure>
       </div>
+
+        <AnimatedCounter />
+      
     </section>
   );
 };

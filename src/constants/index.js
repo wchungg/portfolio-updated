@@ -1,4 +1,4 @@
-export const words = [
+const greetings = [
   { text: "Hello", imgPath: "/images/" },
   { text: "你好", imgPath: "/images/" },
   { text: "Hola", imgPath: "/images/" },
@@ -9,13 +9,27 @@ export const words = [
   { text: "こんにちは", imgPath: "/images/" },
 ];
 
-export const heroText =
+const heroText =
   "An Undergraduate Computer Science Student Interested in ";
 
-export const roles = [
+  const roles = [
   "Full Stack Web Development",
   "UI/UX design",
   "Product Management",
   "Artificial Intelligence",
   "Machine Learning",
 ];
+
+const counterItems = [
+    { value: 100, suffix: "+", label: "XYZ" },
+    { value: 50, suffix: "+", label: "XYZ" },
+    { value: 25, suffix: "+", label: "XYZ" },
+    { value: 10, suffix: "%", label: "XYZ" },
+]
+
+export {
+  greetings,
+  heroText,
+  roles,
+  counterItems,
+};
