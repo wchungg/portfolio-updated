@@ -3,8 +3,9 @@ import Hero from './sections/Hero'
 import { DotGrid } from './components/Bg-Grid'
 import Works from './components/Works'
 import NavBar from './components/NavBar'
-import LogoSection from './components/LogoSection'
+import LogoSection from './sections/LogoSection'
 import AboutGrid from './components/AboutGrid'
+import ExperienceSection from './sections/ExperienceSection'
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
       <AboutGrid />
       <Works />
       {/* <LogoSection /> */}
+      <ExperienceSection />
     </>
   )
 }
