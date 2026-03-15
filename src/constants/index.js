@@ -1,3 +1,14 @@
+import {
+  SiReact,
+  SiNextdotjs,
+  SiTypescript,
+  SiTailwindcss,
+  SiGreensock,
+  SiFramer,
+  SiVercel,
+  SiFigma,
+} from "react-icons/si";
+
 const greetings = [
   { text: "Hello", imgPath: "/images/" },
   { text: "你好", imgPath: "/images/" },
@@ -233,6 +244,36 @@ const expLogos = [
   },
 ];
 
+const skills = [
+  { name: "React", Icon: SiReact, categories: ["Frontend"] },
+  { name: "Next.js", Icon: SiNextdotjs, categories: ["Frontend"] },
+  { name: "TypeScript", Icon: SiTypescript, categories: ["Frontend"] },
+  { name: "Tailwind", Icon: SiTailwindcss, categories: ["Frontend"] },
+  { name: "GSAP", Icon: SiGreensock, categories: ["Frontend"] },
+  { name: "Framer", Icon: SiFramer, categories: ["Frontend"] },
+  { name: "Vercel", Icon: SiVercel, categories: ["DevOps"] },
+  { name: "Figma", Icon: SiFigma, categories: ["Design"] },
+];
+
+const socialImgs = [
+  {
+    name: "insta",
+    imgPath: "/images/insta.png",
+  },
+  {
+    name: "fb",
+    imgPath: "/images/fb.png",
+  },
+  {
+    name: "x",
+    imgPath: "/images/x.png",
+  },
+  {
+    name: "linkedin",
+    imgPath: "/images/linkedin.png",
+  },
+];
+
 export {
   greetings,
   heroText,
@@ -245,5 +286,7 @@ export {
   leftTechList,
   rightTechList,
   expCards,
-  expLogos
+  expLogos,
+  skills,
+  socialImgs
 };
